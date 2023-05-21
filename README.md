@@ -1,5 +1,4 @@
 # TODO HTTP Server Application
-#### Written in Java
 
 ## 1. About
 This TODO app allows users to maintain a list of tasks to do. The app allows users to create, updae and delete TODOs, with more functions listed below.
@@ -16,6 +15,7 @@ This TODO app allows users to maintain a list of tasks to do. The app allows use
 <br />
 
 ## 2. Frameworks Used
+* `Java` language
 * `Spring-Boot` web framework
 * `Logback` logging framework
 * `SLF4J` Simple Logging Facade for Java
@@ -35,6 +35,7 @@ endpoints will return a result in the Json format:
 ### 3.1 Server Properties
 The server is set to listen on port `9583`.  
 This can be changed in the `application.properties` file, under the `server.port` property.
+<br />   
 <br />
 
 ### 3.2 Server Endpoints
