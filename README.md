@@ -1,7 +1,7 @@
 # TODO HTTP Server Application
 
 ## 1. About
-This TODO app allows users to maintain a list of tasks to do. The app allows users to create, updae and delete TODOs, with more functions listed below.
+This TODO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TODOs, with more functions listed below.
 
 #### Each todo has the below properties:
 * `Id:` a unique ID assigned for each To-Do, Starting at 1
