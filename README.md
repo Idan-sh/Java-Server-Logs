@@ -30,6 +30,8 @@ endpoints will return a result in the Json format:
   errorMessage: <message in case of error>  (String)
 }
 ```
+<br />
+
 ### 3.1 Server Properties
 The server is set to listen on port `9583`.  
 This can be changed in the `application.properties` file, under the `server.port` property.
@@ -58,13 +60,13 @@ dueDate: <timestamp in millisecs>   (long number)
 The TODO is created with the status PENDING.   
 When a new TODO is created, it is assigned by the server to the next id in turn.    
 
-#### Upon processing the creation, the following is checked:   
+#### Upon processing the creation, the following will be checked:   
 1. Is there already a TODO with this title (TODOs titles are unique)
 2. Is the dueDate in the future.   
 
 #### If the operation can be invoked (all verification went OK): 
 * The response code will be 200
-* The result will hold the (newly) assigned TODO number
+* The result will hold the newly assigned TODO number
 
 #### If there is an error:   
 *  The response will end with 409 (conflict)
@@ -74,36 +76,44 @@ When a new TODO is created, it is assigned by the server to the next id in turn.
 <br />  
  
 #### 3.2.3 Get TODOs Count
-Returns the total number of TODOs in the system, according to the given filter.
-Endpoint: /todo/size
-Method: GET
-Query Parameter: status. Value: ALL, PENDING, LATE, DONE (in capital case only).
-The response will end with 200; The result will hold the actual number of TODOs according to their status.
-ALL includes, obviously, the total number of existing TODOs.
-If that status is not precisely the above four options, case sensitive, the result is 400 (bad request)
+Returns the total number of TODOs in the system, according to the given filter.   
+`Endpoint:` /todo/size   
+`Method:` GET   
+`Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`.   
+   
+* The response code will be **200**.
+* The result will hold the **number of TODOs** that have the given status.   
+
+If that status is not precisely the above four options (case sensitive) the result will be **400** (bad request).   
 <br />   
 
 #### 3.2.4 Get TODOs Data
-Returns the content of the todos according to the supplied status
-Endpoint: /todo/content
-Method: GET
-Query Parameter: status. Value: ALL, PENDING, LATE, DONE Query Parameter: sortBy. Value: ID, DUE_DATE, TITLE
-Note: This is an optional query parameter. It does not have to appear.
-The response will be a json array. The array will hold json objects that describe a single todo.
-Each TODO object holds:
+Returns the content of the todos according to the given status.    
+`Endpoint:` /todo/content   
+`Method:` GET   
+`Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`   
+`Query Parameter:` sortBy, optional, possible values- `ID`, `DUE_DATE`, `TITLE` (default value: `ID`).   
+   
+* The response will be a json array.   
+* The array will hold json objects that describe a single TODO.  
+* The array will be sorted according to the sortBy parameter, in an acending order.
+* If no TODOs are available the result is an empty array.
+   
+Each Json object in the array holds:
+```yaml
 {
-id: integer,
-title: string,
-content: string,
-status: string,
-dueDate: timestamp (ms): long,
+   id: Integer
+   title: String
+   content: String
+   status: String
+   dueDate: long (Timestamp in millisecs)
 }
-The array will be sorted according to the sortBy parameter.
-The sorting will always be ascending (that is, from lower to higher). In case sortBy is not supplied, the sorting is done by ID
-If no TODOs are available the result is an empty array.
-This response code is 200;
-The result will hold the json array as described above.
-In case status or sortBy are not precisely as the options mentioned above, case sensitive, the result is 400 (bad request)
+```
+
+* The response code will be 200
+* The result will hold the json array as described above
+
+In case status or sortBy are not **precisely** as the options mentioned above, case sensitive, the result is **400** (bad request).   
 <br />
 
 #### 3.2.5 Update TODO status
