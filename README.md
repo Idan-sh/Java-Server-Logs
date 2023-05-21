@@ -49,7 +49,9 @@ This can be changed in the `application.properties` file, under the `server.port
 This is a sanity endpoint used to check that the server is up and running.  
 `Endpoint:` /todo/health  
 `Method:` GET  
-> The response code will be **200**, and the result will be the string **"OK"**.   
+
+* The response code will be **200**
+* The result will be the string **"OK"**.   
 <br />
 
 #### 3.2.2 Create New TO-DO:
@@ -72,11 +74,11 @@ When a new TO-DO is created, it is assigned by the server to the next id in turn
 2. Is the dueDate in the future.   
 
 #### If the operation can be invoked (all verification went OK): 
-* The response code will be 200
+* The response code will be **200**
 * The result will hold the newly assigned TO-DO number
 
 #### If there is an error:   
-*  The response will end with 409 (conflict)
+*  The response will end with **409** (conflict)
 *  The errorMessage will be set according to the error:
       * `TO-DO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system".  
       * `due date is in the past:` “Error: Can’t create new TODO that its due date is in the past”
@@ -117,7 +119,7 @@ Each Json object in the array holds:
 }
 ```
 
-* The response code will be 200
+* The response code will be **200**
 * The result will hold the json array as described above
 
 In case status or sortBy are not **precisely** as the options mentioned above, case sensitive, the result is **400** (bad request).   
