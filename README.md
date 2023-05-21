@@ -52,9 +52,9 @@ Creates a new TODO item in the system.
 `Body:` json object-   
 ```yaml
 {
-title: <TODO title>                 (String)
-content: <TODO description>         (String)
-dueDate: <timestamp in millisecs>   (long number)
+   title: <TODO title>                 (String)
+   content: <TODO description>         (String)
+   dueDate: <timestamp in millisecs>   (long number)
 }
 ```
 The TODO is created with the status PENDING.   
@@ -76,7 +76,7 @@ When a new TODO is created, it is assigned by the server to the next id in turn.
 <br />  
  
 #### 3.2.3 Get TODOs Count
-Returns the total number of TODOs in the system, according to the given filter.   
+Returns the total number of TODOs in the app, according to the given filter.   
 `Endpoint:` /todo/size   
 `Method:` GET   
 `Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`.   
@@ -117,22 +117,37 @@ In case status or sortBy are not **precisely** as the options mentioned above, c
 <br />
 
 #### 3.2.5 Update TODO status
-Updates todo status property
-Endpoint: /todo
-Method: PUT
-Query Parameter: id. Number. The TODO id
-Query Parameter: status. The status to update. It can be PENDING, LATE, or DONE
-If the TODO exists (according to the id), its status gets updated.
-The result is the name of the OLD state that this TODO was at (any option of PENDING, LATE, or DONE, case sensitive).
-If no such TODO with that id can be found, the response will end with 404 (not found); the errorMessage will be set according to the error: “Error: no such TODO with id <todo number>”
-In case the status is not exactly the above-mentioned options, case sensitive, the result is 400 (bad request)
+Updates a TODO's status property.   
+`Endpoint:` /todo  
+`Method:` PUT  
+`Query Parameter:` id, The TODO ID  
+`Query Parameter:` status, The status to update. possible values- `PENDING`, `LATE`, `DONE`  
+   
+#### If the TODO exists (according to the ID):
+* The response code will be **200**   
+* Its status will be updated
+* The result is the name of the **OLD** state that this TODO was at (any option of PENDING, LATE, or DONE, case sensitive)
+
+#### If no such TODO with that ID can be found
+* The response code will be **404** (not found).
+* The errorMessage will be: "Error: no such TODO with id <todo number>"
+   
+#### If the status is not exactly the above-mentioned options (case sensitive)
+* The result is **400** (bad request)
 <br />
   
 #### 3.2.6 Delete TODO
-Deletes a TODO object.
-Endpoint: /todo
-Method: DELETE
-Query Parameter: id. Number. The TODO id
-Once deleted, its (deleted) id remains empty (that is, the next TODO that will be created DOES NOT take this id)
-If the operation can be invoked (the TODO exists): the response will end with 200; The result will hold the actual number of all the TODOs left in the list.
-If the operation cannot be invoked (TODO does not exist): the response will end with 404 (not found); the errorMessage will be: “Error: no such TODO with id <todo number>”
+Deletes a TODO object.   
+`Endpoint:` /todo  
+`Method:` DELETE  
+`Query Parameter:` id, The TODO ID   
+   
+> Once deleted, its deleted id remains **empty**, so that the next TODO that will be created **will not** take this id  
+   
+#### If the operation can be invoked (the TODO exists):
+* The response will end with **200**
+* The result will hold the number of TODOs left in the app.
+
+#### If the operation cannot be invoked (TODO does not exist):
+* The response will end with **404** (not found)
+* The errorMessage will be: "Error: no such TODO with id <todo number>"
