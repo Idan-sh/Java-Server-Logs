@@ -1,7 +1,8 @@
 # TO-DO HTTP Server Application
 
 ## 1. About
-This TO-DO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TO-DOs, with more functions listed below.  
+This TO-DO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete    
+TO-DOs, with more functions listed below.  
 
 The server will create two log files, in a dedicated logs folder:
 * `requests.log`: In charge of logging each incoming request of any type to the server
