@@ -1,8 +1,13 @@
 # TODO HTTP Server Application
 
 ## 1. About
-This TODO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TODOs, with more functions listed below.
+This TODO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TODOs, with more functions listed below.   
 
+The server will create two log files, in a dedicated logs folder:
+* `requests.log`:
+      * In charge of logging each incoming request of any type to the server
+* `todos.log`:
+      * In charge of logging information regarding the todo management
 #### Each todo has the below properties:
 * `Id:` a unique ID assigned for each To-Do, Starting at 1
 * `Title:` short title describing the essence of this TODO
@@ -152,3 +157,6 @@ Deletes a TODO object.
 #### If the operation cannot be invoked (TODO does not exist):
 * The response will end with **404** (not found)
 * The errorMessage will be: "Error: no such TODO with id <todo number>"
+   
+## 4. Postman Collection
+   
