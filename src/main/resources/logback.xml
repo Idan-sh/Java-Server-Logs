@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+    <property name="LOG_DIR" value="./logs/"/>
+    <property name="PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} %level: %msg%n"/>
+
+    <!-- Write To Console -->
+    <appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="requestsAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_DIR}/requests.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="todosAppender" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_DIR}/todos.log</file>
+        <append>false</append>
+        <encoder>
+            <pattern>${PATTERN}</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="request-logger" level="INFO">
+        <appender-ref ref="consoleAppender"/>
+        <appender-ref ref="requestsAppender"/>
+    </logger>
+
+    <logger name="todo-logger" level="INFO">
+        <appender-ref ref="todosAppender"/>
+    </logger>
+</configuration>
