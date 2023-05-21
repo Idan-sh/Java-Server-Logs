@@ -33,13 +33,15 @@ endpoints will return a result in the Json format:
 ### 3.1 Server Properties
 The server is set to listen on port `9583`.  
 This can be changed in the `application.properties` file, under the `server.port` property.
+<br />
 
 ### 3.2 Server Endpoints
 #### 3.2.1 Get Health
 This is a sanity endpoint used to check that the server is up and running.  
 `Endpoint:` /todo/health  
 `Method:` GET  
-The response code will be 200, and the result will be the string "OK".   
+> The response code will be **200**, and the result will be the string **"OK"**.   
+<br />
 
 #### 3.2.2 Create New TODO:
 Creates a new TODO item in the system.
@@ -53,18 +55,24 @@ content: <TODO description>         (String)
 dueDate: <timestamp in millisecs>   (long number)
 }
 ```
-The TODO is created with the status PENDING.
-When a new TODO is created, it is assigned by the server to the next id in turn.
-Upon processing you need to verify if:
-1. Is there already a TODO with this title (TODOs are distinguished by their title)
-2. dueDate is in the future.
-If the operation can be invoked (all verification went OK): the response code will be 200; The result will hold the (newly) assigned TODO number
-If there is an error, the response will end with 409 (conflict); the errorMessage will be set according to the error:
-● TODO already exists:
-“Error: TODO with the title [<TODO title>] already exists in the system”
-● due date is in the past:
-“Error: Can’t create new TODO that its due date is in the past”
-   
+The TODO is created with the status PENDING.   
+When a new TODO is created, it is assigned by the server to the next id in turn.    
+
+#### Upon processing the creation, the following is checked:   
+1. Is there already a TODO with this title (TODOs titles are unique)
+2. Is the dueDate in the future.   
+
+#### If the operation can be invoked (all verification went OK): 
+* The response code will be 200
+* The result will hold the (newly) assigned TODO number
+
+#### If there is an error:   
+*  The response will end with 409 (conflict)
+*  The errorMessage will be set according to the error:
+      * `TODO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system".  
+      * `due date is in the past:` “Error: Can’t create new TODO that its due date is in the past”
+<br />  
+ 
 #### 3.2.3 Get TODOs Count
 Returns the total number of TODOs in the system, according to the given filter.
 Endpoint: /todo/size
@@ -73,7 +81,8 @@ Query Parameter: status. Value: ALL, PENDING, LATE, DONE (in capital case only).
 The response will end with 200; The result will hold the actual number of TODOs according to their status.
 ALL includes, obviously, the total number of existing TODOs.
 If that status is not precisely the above four options, case sensitive, the result is 400 (bad request)
-   
+<br />   
+
 #### 3.2.4 Get TODOs Data
 Returns the content of the todos according to the supplied status
 Endpoint: /todo/content
@@ -95,6 +104,7 @@ If no TODOs are available the result is an empty array.
 This response code is 200;
 The result will hold the json array as described above.
 In case status or sortBy are not precisely as the options mentioned above, case sensitive, the result is 400 (bad request)
+<br />
 
 #### 3.2.5 Update TODO status
 Updates todo status property
@@ -106,6 +116,7 @@ If the TODO exists (according to the id), its status gets updated.
 The result is the name of the OLD state that this TODO was at (any option of PENDING, LATE, or DONE, case sensitive).
 If no such TODO with that id can be found, the response will end with 404 (not found); the errorMessage will be set according to the error: “Error: no such TODO with id <todo number>”
 In case the status is not exactly the above-mentioned options, case sensitive, the result is 400 (bad request)
+<br />
   
 #### 3.2.6 Delete TODO
 Deletes a TODO object.
