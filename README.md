@@ -4,10 +4,8 @@
 This TO-DO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TO-DOs, with more functions listed below.  
 
 The server will create two log files, in a dedicated logs folder:
-* `requests.log`:
-      * In charge of logging each incoming request of any type to the server
-* `todos.log`:
-      * In charge of logging information regarding the todo management  
+* `requests.log`: In charge of logging each incoming request of any type to the server
+* `todos.log`: In charge of logging information regarding the todo management  
 
 You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server.
 
@@ -151,12 +149,12 @@ Deletes a TO-DO object.
 `Method:` DELETE  
 `Query Parameter:` id, The TO-DO ID   
    
-> Once deleted, its deleted id remains **empty**, so that the next TODO that will be created **will not** take this id  
+> Once deleted, its deleted id remains **empty**, so that the next TO-DO that will be created **will not** take this id  
    
-#### If the operation can be invoked (the TODO exists):
+#### If the operation can be invoked (the TO-DO exists):
 * The response will end with **200**
-* The result will hold the number of TODOs left in the app.
+* The result will hold the number of TO-DOs left in the app.
 
-#### If the operation cannot be invoked (TODO does not exist):
+#### If the operation cannot be invoked (TO-DO does not exist):
 * The response will end with **404** (not found)
 * The errorMessage will be: "Error: no such TODO with id <todo number>"
