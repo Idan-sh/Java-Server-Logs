@@ -70,7 +70,7 @@ The TO-DO is created with the status PENDING.
 When a new TO-DO is created, it is assigned by the server to the next id in turn.    
 
 #### Upon processing the creation, the following will be checked:   
-1. Is there already a TO-DO with this title (TO-DOs titles are unique)
+1. Is there already a TO-DO with this title (TO-DOs' titles are unique)
 2. Is the dueDate in the future.   
 
 #### If the operation can be invoked (all verification went OK): 
@@ -80,7 +80,7 @@ When a new TO-DO is created, it is assigned by the server to the next id in turn
 #### If there is an error:   
 *  The response will end with **409** (conflict)
 *  The errorMessage will be set according to the error:
-      * `TO-DO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system".  
+      * `TO-DO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system"   
       * `due date is in the past:` “Error: Can’t create new TODO that its due date is in the past”
 <br />  
  
@@ -90,8 +90,8 @@ Returns the total number of TO-DOs in the app, according to the given filter.
 `Method:` GET   
 `Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`.   
    
-* The response code will be **200**.
-* The result will hold the **number of TO-DOs** that have the given status.   
+* The response code will be **200**
+* The result will hold the **number of TO-DOs** that have the given status   
 
 If that status is not precisely the above four options (case sensitive) the result will be **400** (bad request).   
 <br />   
@@ -103,10 +103,10 @@ Returns the content of the todos according to the given status.
 `Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`   
 `Query Parameter:` sortBy, optional, possible values- `ID`, `DUE_DATE`, `TITLE` (default value: `ID`).   
    
-* The response will be a json array.   
-* The array will hold json objects that describe a single TO-DO.  
-* The array will be sorted according to the sortBy parameter, in an acending order.
-* If no TO-DOs are available the result is an empty array.
+* The response will be a json array   
+* The array will hold json objects that describe a single TO-DO  
+* The array will be sorted according to the sortBy parameter, in an acending order
+* If no TO-DOs are available the result is an empty array
    
 Each Json object in the array holds:
 ```yaml
@@ -138,11 +138,11 @@ Updates a TO-DO's status property.
 * The result is the name of the **OLD** state that this TO-DO was at (any option of PENDING, LATE, or DONE, case sensitive)
 
 #### If no such TO-DO with that ID can be found
-* The response code will be **404** (not found).
+* The response code will be **404** (not found)
 * The errorMessage will be: "Error: no such TODO with id <todo number>"
    
 #### If the status is not exactly the above-mentioned options (case sensitive)
-* The result is **400** (bad request)
+* The result and response code will be **400** (bad request)
 <br />
   
 #### 3.2.6 Delete TO-DO
@@ -155,7 +155,7 @@ Deletes a TO-DO object.
    
 #### If the operation can be invoked (the TO-DO exists):
 * The response will end with **200**
-* The result will hold the number of TO-DOs left in the app.
+* The result will hold the number of TO-DOs left in the app
 
 #### If the operation cannot be invoked (TO-DO does not exist):
 * The response will end with **404** (not found)
