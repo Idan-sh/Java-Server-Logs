@@ -1,7 +1,7 @@
-# TODO HTTP Server Application
+# TO-DO HTTP Server Application
 
 ## 1. About
-This TODO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TODOs, with more functions listed below.  
+This TO-DO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete TO-DOs, with more functions listed below.  
 
 The server will create two log files, in a dedicated logs folder:
 * `requests.log`:
@@ -12,14 +12,14 @@ The server will create two log files, in a dedicated logs folder:
 You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server.
 
 #### Each todo has the below properties:
-* `Id:` a unique ID assigned for each To-Do, Starting at 1
-* `Title:` short title describing the essence of this TODO
-* `Content:` the actual content/description describing what this TODO stands for
-* `Due date:` a timestamp (in millisecs) denoting the target time for this TODO to be fulfilled
-* `Status:` the status of the TODO as follows,
+* `Id:` a unique ID assigned for each TO-DO, Starting at 1
+* `Title:` short title describing the essence of this TO-DO
+* `Content:` the actual content/description describing what this TO-DO stands for
+* `Due date:` a timestamp (in millisecs) denoting the target time for this TO-DO to be fulfilled
+* `Status:` the status of the TO-DO as follows,
     * `PENDING` when it is created and before the due date
     * `LATE`    when it is not performed yet, and we are past the due date
-    * `DONE`    when the TODO item processing is over
+    * `DONE`    when the TO-DO item processing is over
 <br />
 
 ## 2. Frameworks Used
@@ -54,49 +54,49 @@ This is a sanity endpoint used to check that the server is up and running.
 > The response code will be **200**, and the result will be the string **"OK"**.   
 <br />
 
-#### 3.2.2 Create New TODO:
-Creates a new TODO item in the system.
+#### 3.2.2 Create New TO-DO:
+Creates a new TO-DO item in the system.
 `Endpoint:` /todo   
 `Method:` POST   
 `Body:` json object-   
 ```yaml
 {
-   title: <TODO title>                 (String)
-   content: <TODO description>         (String)
+   title: <TO-DO title>                (String)
+   content: <TO-DO description>        (String)
    dueDate: <timestamp in millisecs>   (long number)
 }
 ```
-The TODO is created with the status PENDING.   
-When a new TODO is created, it is assigned by the server to the next id in turn.    
+The TO-DO is created with the status PENDING.   
+When a new TO-DO is created, it is assigned by the server to the next id in turn.    
 
 #### Upon processing the creation, the following will be checked:   
-1. Is there already a TODO with this title (TODOs titles are unique)
+1. Is there already a TO-DO with this title (TO-DOs titles are unique)
 2. Is the dueDate in the future.   
 
 #### If the operation can be invoked (all verification went OK): 
 * The response code will be 200
-* The result will hold the newly assigned TODO number
+* The result will hold the newly assigned TO-DO number
 
 #### If there is an error:   
 *  The response will end with 409 (conflict)
 *  The errorMessage will be set according to the error:
-      * `TODO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system".  
+      * `TO-DO already exists:` "Error: TODO with the title [<TODO title>] already exists in the system".  
       * `due date is in the past:` “Error: Can’t create new TODO that its due date is in the past”
 <br />  
  
-#### 3.2.3 Get TODOs Count
-Returns the total number of TODOs in the app, according to the given filter.   
+#### 3.2.3 Get TO-DOs Count
+Returns the total number of TO-DOs in the app, according to the given filter.   
 `Endpoint:` /todo/size   
 `Method:` GET   
 `Query Parameter:` status, possible values- `ALL`, `PENDING`, `LATE`, `DONE`.   
    
 * The response code will be **200**.
-* The result will hold the **number of TODOs** that have the given status.   
+* The result will hold the **number of TO-DOs** that have the given status.   
 
 If that status is not precisely the above four options (case sensitive) the result will be **400** (bad request).   
 <br />   
 
-#### 3.2.4 Get TODOs Data
+#### 3.2.4 Get TO-DOs Data
 Returns the content of the todos according to the given status.    
 `Endpoint:` /todo/content   
 `Method:` GET   
@@ -104,9 +104,9 @@ Returns the content of the todos according to the given status.
 `Query Parameter:` sortBy, optional, possible values- `ID`, `DUE_DATE`, `TITLE` (default value: `ID`).   
    
 * The response will be a json array.   
-* The array will hold json objects that describe a single TODO.  
+* The array will hold json objects that describe a single TO-DO.  
 * The array will be sorted according to the sortBy parameter, in an acending order.
-* If no TODOs are available the result is an empty array.
+* If no TO-DOs are available the result is an empty array.
    
 Each Json object in the array holds:
 ```yaml
@@ -125,19 +125,19 @@ Each Json object in the array holds:
 In case status or sortBy are not **precisely** as the options mentioned above, case sensitive, the result is **400** (bad request).   
 <br />
 
-#### 3.2.5 Update TODO status
-Updates a TODO's status property.   
+#### 3.2.5 Update TO-DO status
+Updates a TO-DO's status property.   
 `Endpoint:` /todo  
 `Method:` PUT  
-`Query Parameter:` id, The TODO ID  
+`Query Parameter:` id, The TO-DO ID  
 `Query Parameter:` status, The status to update. possible values- `PENDING`, `LATE`, `DONE`  
    
-#### If the TODO exists (according to the ID):
+#### If the TO-DO exists (according to the ID):
 * The response code will be **200**   
 * Its status will be updated
-* The result is the name of the **OLD** state that this TODO was at (any option of PENDING, LATE, or DONE, case sensitive)
+* The result is the name of the **OLD** state that this TO-DO was at (any option of PENDING, LATE, or DONE, case sensitive)
 
-#### If no such TODO with that ID can be found
+#### If no such TO-DO with that ID can be found
 * The response code will be **404** (not found).
 * The errorMessage will be: "Error: no such TODO with id <todo number>"
    
@@ -145,11 +145,11 @@ Updates a TODO's status property.
 * The result is **400** (bad request)
 <br />
   
-#### 3.2.6 Delete TODO
-Deletes a TODO object.   
+#### 3.2.6 Delete TO-DO
+Deletes a TO-DO object.   
 `Endpoint:` /todo  
 `Method:` DELETE  
-`Query Parameter:` id, The TODO ID   
+`Query Parameter:` id, The TO-DO ID   
    
 > Once deleted, its deleted id remains **empty**, so that the next TODO that will be created **will not** take this id  
    
