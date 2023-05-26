@@ -14,7 +14,7 @@ WORKDIR /server
 CMD ["java", "-jar", "server.jar"]
 
 
-# -------- COMMANDS TO USE THIS IMAGE: --------
+# -------- COMMANDS TO USE THIS IMAGE --------
 
 # Command to build the image file:
 # docker build -t todo-server:1.0 . --platform linux/amd64
