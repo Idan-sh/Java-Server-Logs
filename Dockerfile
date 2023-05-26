@@ -17,7 +17,7 @@ CMD ["java", "-jar", "server.jar"]
 # -------- COMMANDS TO USE THIS IMAGE --------
 
 # Command to build the image file:
-# docker build -t todo-server:1.0 . --platform linux/amd64
+# docker build -t idansm/todo-server:1.0 . --platform linux/amd64
 
 # Command to run the image file created:
-# docker run todo-server:1.0
+# docker run --name todo-server -d -p 3769:9285 idansm/todo-server:1.0
