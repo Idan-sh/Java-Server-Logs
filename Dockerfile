@@ -10,6 +10,9 @@ COPY out/artifacts/java_server_jar/java.server.jar /server/server.jar
 # set the directory for excecuting future commands
 WORKDIR /server
 
+# expose port 3769
+EXPOSE 3769
+
 # run the jar file
 CMD ["java", "-jar", "server.jar"]
 
