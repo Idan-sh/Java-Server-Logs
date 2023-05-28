@@ -29,7 +29,7 @@ You can download and import the `Test-Run.postman_collection.json` Postman file 
 <br />
 
 ## 3. Server Behavior
-### 3.0 Return
+### 3.0 Respose Format
 endpoints will return a result in the Json format:
 ```yaml
 {
