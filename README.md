@@ -4,12 +4,17 @@
 This TO-DO app allows users to maintain a list of tasks to do. The app allows users to create, update and delete    
 TO-DOs, with more functions listed below.  
 
-The server will create two log files, in a dedicated logs folder:
+#### The server will create two log files, in a dedicated logs folder:
 * `requests.log`: In charge of logging each incoming request of any type to the server
 * `todos.log`: In charge of logging information regarding the todo management  
+<br />   
 
-You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server.
-
+#### Options to use and test the TO-DO Server:
+* You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server.
+* You can also use the Dockerfile to build and run a docker container of the todo-server   
+> Notes and instructions on how to use the docker container are inside the Dockerfile
+<br />   
+   
 #### Each todo has the below properties:
 * `Id:` a unique ID assigned for each TO-DO, Starting at 1
 * `Title:` short title describing the essence of this TO-DO
