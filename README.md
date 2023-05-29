@@ -10,8 +10,8 @@ TO-DOs, with more functions listed below.
 <br />   
 
 #### Options to use and test the TO-DO Server:
-* You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server.
-* You can also use the Dockerfile to build and run a docker container of the todo-server   
+* You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server
+* You can also use the `Dockerfile` to build and run a docker container with the todo-server   
 > Notes and instructions on how to use the docker container are inside the Dockerfile
 <br />   
    
@@ -27,10 +27,11 @@ TO-DOs, with more functions listed below.
 <br />
 
 ## 2. Frameworks Used
-* `Java` language
-* `Spring-Boot` web framework
-* `Logback` logging framework
-* `SLF4J` Simple Logging Facade for Java
+* `Java` - programming language
+* `Spring-Boot` - web framework
+* `Logback` - logging framework
+* `SLF4J` - Simple Logging Facade for Java
+* `Docker` - docker containers for ease of use
 <br />
 
 ## 3. Server Behavior
@@ -166,3 +167,39 @@ Deletes a TO-DO object.
 #### If the operation cannot be invoked (TO-DO does not exist):
 * The response will end with **404** (not found)
 * The errorMessage will be: "Error: no such TODO with id <todo number>"
+<br />   
+   
+## 4. Docker Containers
+### 4.0 Pull The Docker Image From Docker-Hub
+Use the docker image from Docker-Hub to simply use the server and test its capabilities without worrying about setting it up.   
+      
+#### Pull the image file from Docker-Hub:
+* Docker-Hub link: **https://hub.docker.com/r/idansm/todo-server**
+   
+You can pull the docker image through Docker-Desktop by using the tag `idansm/todo-server:1.0`,   
+or by using the following command in the terminal:
+```
+   docker pull idansm/todo-server:1.0
+```   
+> You need to install docker on your machine in order to run it properly
+<br />   
+
+### 4.1 Build and Run the Docker Container
+#### 4.1.1 Build the image file:
+```
+   docker build -t todo-server:1.0 . --platform linux/amd64
+```
+**Flags used:**
+* `-t` - used for the tag (name) of the docker container, where the number (1.0) refers to the version of the server (not required, but helps with version control)
+* `--platform linux/amd64` - states the target platform of the docker container to be Linux or Windows, remove the flag to run it on MacOS
+<br />
+   
+#### 4.1.2 Run the image file created:
+```
+   docker run --name todo-server -d -p 3769:9285 todo-server:1.0
+```
+**Flags used:**
+* `-p` - makes the external exposed port of the server to be **3769**, and the internal port of the server (the port that the server actualy listens to, inside the docker container) to be **9285**
+* `-d` - runs the docker container in the backgroud, enables use of the terminal after running the docker container (can be removed to see the logs of the server that were writen to the screen)
+* `--name` - the name of the docker container created from the run command
+* `todo-server:1.0` is the image tag of the image created by the build command
