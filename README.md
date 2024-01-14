@@ -10,9 +10,16 @@ TO-DOs, with more functions listed below.
 <br />   
 
 #### Options to use and test the TO-DO Server:
-* You can download and import the `Test-Run.postman_collection.json` Postman file into Postman to see an example of some requests and responses from the server
-* You can also use the `Dockerfile` to build and run a docker container with the todo-server   
-> Notes and instructions on how to use the docker container are inside the Dockerfile
+* You can download and import the following Postman files into Postman to see an example of some requests and responses from the server:
+   * `Local-Server-Test Run.postman_collection.json` - for a local instance of the server that is running
+   * `GCP-Deployed-Server-Test-Run.postman_collection.json` - to use the Google Cloud Platform deployed instance
+<br />
+
+* You can also use the `Dockerfile` to build and run a docker container with the todo-server
+   > Notes and instructions on how to use the docker container are inside the Dockerfile
+<br />
+   
+* Through GCP - enter the URL: `https://todo-server-zzka7wps6q-uc.a.run.app`, with the endpoints described below
 <br />   
    
 #### Each todo has the below properties:
