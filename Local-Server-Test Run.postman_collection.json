@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "47cb99e1-15a7-4baf-93a4-793803462dc3",
+		"_postman_id": "a812be96-0aa1-40f3-9be5-f5f5b14d0373",
 		"name": "TODO Server Test-Run",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26805517"
@@ -291,6 +291,33 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "port",
+			"value": "9285",
+			"type": "string"
 		}
 	]
 }
