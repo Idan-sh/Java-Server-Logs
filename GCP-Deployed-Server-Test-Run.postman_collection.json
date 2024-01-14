@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "bb0e064d-ae68-4018-ab7a-926194fbdc1c",
-		"name": "TODO Server Test-Run",
+		"name": "GCP Deployed TODO Server Test Run",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26805517"
 	},
@@ -24,10 +24,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo/health",
+					"raw": "https://todo-server-1-2aj6ey6ugq-zf.a.run.app/todo/health",
 					"protocol": "https",
 					"host": [
-						"todo-server-2aj6ey6ugq-zf",
+						"todo-server-1-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"

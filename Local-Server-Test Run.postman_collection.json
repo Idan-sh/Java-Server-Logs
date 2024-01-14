@@ -1,11 +1,43 @@
 {
 	"info": {
-		"_postman_id": "a812be96-0aa1-40f3-9be5-f5f5b14d0373",
-		"name": "TODO Server Test-Run",
+		"_postman_id": "1beec9b9-b2e7-4ff2-b004-831f8b286ae9",
+		"name": "Local TODO Server Test Run",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26805517"
 	},
 	"item": [
+		{
+			"name": "Check the server's status",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{port}}/todo/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{port}}",
+					"path": [
+						"todo",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
 		{
 			"name": "Create TODO 1",
 			"request": {
@@ -13,7 +45,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Add colors to the README file\",\r\n  \"content\": \"black and white? boring\",\r\n  \"dueDate\": 1703881891000\r\n}",
+					"raw": "{\r\n  \"title\": \"Add colors to the README file\",\r\n  \"content\": \"black and white? boring\",\r\n  \"dueDate\": 3003881891000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -41,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Add pictures to the README file\",\r\n  \"content\": \"who likes reading anyway...\",\r\n  \"dueDate\": 1704881891000\r\n}",
+					"raw": "{\r\n  \"title\": \"Add pictures to the README file\",\r\n  \"content\": \"who likes reading anyway...\",\r\n  \"dueDate\": 3004881891000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

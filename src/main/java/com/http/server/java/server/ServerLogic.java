@@ -63,7 +63,7 @@ public class ServerLogic {
      * Updates the status of a TO-DO with a given ID.
      * @param id ID of the TO-DO to update
      * @param status new status to update to
-     * @return
+     * @return the precious status of the TO-DO
      */
     @PutMapping(value="/todo")
     public ResponseEntity<Response<String>> updateTodo(HttpServletRequest request, @RequestParam int id, @RequestParam String status) {
