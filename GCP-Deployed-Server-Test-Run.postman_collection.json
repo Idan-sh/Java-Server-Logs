@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a812be96-0aa1-40f3-9be5-f5f5b14d0373",
+		"_postman_id": "38ce9535-0d16-4585-b3df-c3d66542ee34",
 		"name": "TODO Server Test-Run",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26805517"
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Add colors to the README file\",\r\n  \"content\": \"black and white? boring\",\r\n  \"dueDate\": 1703881891000\r\n}",
+					"raw": "{\r\n  \"title\": \"Add colors to the README file\",\r\n  \"content\": \"black and white? boring\",\r\n  \"dueDate\": 3003881891000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,10 +21,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -43,7 +43,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"Add pictures to the README file\",\r\n  \"content\": \"who likes reading anyway...\",\r\n  \"dueDate\": 1704881891000\r\n}",
+					"raw": "{\r\n  \"title\": \"Add pictures to the README file\",\r\n  \"content\": \"who likes reading anyway...\",\r\n  \"dueDate\": 3004881891000\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,10 +51,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -72,10 +72,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo/size?status=ALL",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo/size?status=ALL",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -100,10 +100,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo/content?status=PENDING&sortBy=TITLE",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo/content?status=PENDING&sortBy=TITLE",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -132,10 +132,10 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo?id=5&status=DONE",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo?id=5&status=DONE",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -163,10 +163,10 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/logs/level?logger-name=todo-logger&logger-level=DEBUG",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/logs/level?logger-name=todo-logger&logger-level=DEBUG",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -195,10 +195,10 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo?id=1&status=LATE",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo?id=1&status=LATE",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -226,10 +226,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo/size?status=PENDING",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo/size?status=PENDING",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -263,10 +263,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo?id=2",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo?id=2",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
@@ -290,10 +290,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://todo-server-zzka7wps6q-uc.a.run.app/todo/content?status=LATE",
+					"raw": "https://todo-server-2aj6ey6ugq-zf.a.run.app/todo/content?status=LATE",
 					"protocol": "https",
 					"host": [
-						"todo-server-zzka7wps6q-uc",
+						"todo-server-2aj6ey6ugq-zf",
 						"a",
 						"run",
 						"app"
