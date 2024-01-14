@@ -27,6 +27,7 @@ public class ServerLogic {
      */
     @GetMapping("/todo/health")
     public ResponseEntity<String> getHealth(HttpServletRequest request) {
+        db = new DataBase(); // Reset the database for new clean use (for multiple GCP users)
         long currentTime = System.currentTimeMillis();
 
         logRequest(request, currentTime);
