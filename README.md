@@ -19,7 +19,7 @@ TO-DOs, with more functions listed below.
    > Notes and instructions on how to use the docker container are inside the Dockerfile
 <br />
    
-* Through GCP - enter the URL: `https://todo-server-zzka7wps6q-uc.a.run.app`, with the endpoints described below
+* Through GCP - enter the URL: `https://todo-server-2aj6ey6ugq-zf.a.run.app`, with the endpoints described below
 <br />   
    
 #### Each todo has the below properties:
